@@ -13,7 +13,9 @@ function App() {
   
   const handleRandomContact = () =>{
    
-    const randomContactIs = showContacts.push(<tr>
+    const randomContactIs = (
+    <table>
+    <tr>
     <td><img src={randomContact.pictureUrl} alt={randomContact.name} width="50px"/></td>
     <td>{randomContact.name}</td>
     <td>{randomContact.popularity}</td>
@@ -21,14 +23,16 @@ function App() {
     <td>{randomContact.wonEmmy}</td>
     {randomContact.wonOscar && <th>🏆</th>}
     {randomContact.wonEmmy && <th>🏆</th>}
-  </tr>)
+  </tr>
+  </table>
+  )
     //console.log(randomContactIs)
     setRandomContact(randomContactIs)
   }
 
 
   const handleSortByName = () => {
-    const sorted = contacts.sort(function(a, b) {
+    const sorted = [...contacts].sort(function(a, b) {
       var nameA = a.name;
       var nameB = b.name;
       if (nameA < nameB) {
@@ -44,7 +48,7 @@ function App() {
   }
 
   const handleSortByPopularity = () => {
-    const sorted = sortPopularity.sort((a,b) => {
+    const sorted = [...sortPopularity].sort((a,b) => {
       let popularity =  b.popularity - a.popularity
       return popularity.toFixed(2)
     })
@@ -54,6 +58,7 @@ function App() {
 
   const showContacts = contacts.map(contact => {
     return (
+      
       <tr key = {contact.name}>
           <td><img src={contact.pictureUrl} alt={contact.name} width="50px"/></td>
           <td>{contact.name}</td>
@@ -81,7 +86,6 @@ function App() {
           <th>Won an Emmy</th>
         </tr>
         {showContacts}
-        {}
         </table>
         
     </div>
