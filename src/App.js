@@ -13,7 +13,8 @@ function App() {
   
   const handleRandomContact = () =>{
    
-    const randomContactIs = (
+    const randomContactIs = ( 
+      [...contacts], 
     <table>
     <tr>
     <td><img src={randomContact.pictureUrl} alt={randomContact.name} width="50px"/></td>
@@ -74,8 +75,8 @@ function App() {
   return (
     <div className="App">
        <h1>IronContacts</h1>
-        <button onClick={handleRandomContact}>Random Contact</button>
-        <button onClick={handleSortByName}>Sort by Name</button>
+        <button onClick={() => handleRandomContact}>Random Contact</button>
+        <button onClick={()=> handleSortByName}>Sort by Name</button>
         <button onClick={handleSortByPopularity}>Sort by Popularity</button>
       <table>
         <tr>
