@@ -15,7 +15,7 @@ function App() {
     if (currentRemainingContacts.length === 0) {
       return;
     }
-    
+
     const randomIndex = Math.round(
       Math.random() * (remainingContacts.length - 1)
     );
