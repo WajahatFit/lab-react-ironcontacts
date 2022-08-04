@@ -5,13 +5,12 @@ function App() {
   const [contacts, setContacts] = useState(contactArr.slice(0,5));
   const [remainingContacts, setRemainingContacts] = useState(contactArr.slice(5))
 
-  console.log(remainingContacts)
   
   const handleRandomContact = () =>{
-    //const randomContactObj = remainingContacts[Math.floor(Math.random()* [...contacts].length)]
+    //const randomContactObj = remainingContacts[Math.floor(Math.random()* contacts.length)]
     const currentContacts = [...contacts];
     const currentRemainingContacts = [...remainingContacts];
-
+    //console.log(randomContactObj)
     if (currentRemainingContacts.length === 0) {
       return;
     }
